@@ -1,0 +1,7 @@
+fastapi==0.115.12
+uvicorn==0.34.2
+httpx==0.28.1
+pytest==8.3.5
+SQLAlchemy==2.0.41
+alembic==1.16.1
+demoparser2==0.42.1

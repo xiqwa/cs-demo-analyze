@@ -1,0 +1,106 @@
+{
+  "$defs": {
+    "DatabaseHealth": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "ready",
+            "unavailable",
+            "schema_mismatch"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "schema_revision": {
+          "anyOf": [
+            {
+              "const": "0001_initial",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Schema Revision"
+        },
+        "expected_revision": {
+          "const": "0001_initial",
+          "default": "0001_initial",
+          "title": "Expected Revision",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "schema_revision"
+      ],
+      "title": "DatabaseHealth",
+      "type": "object"
+    },
+    "HealthData": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "ok",
+            "degraded"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "service": {
+          "const": "roundmind-api",
+          "default": "roundmind-api",
+          "title": "Service",
+          "type": "string"
+        },
+        "database": {
+          "$ref": "#/$defs/DatabaseHealth"
+        }
+      },
+      "required": [
+        "status",
+        "database"
+      ],
+      "title": "HealthData",
+      "type": "object"
+    },
+    "Meta": {
+      "additionalProperties": false,
+      "properties": {
+        "request_id": {
+          "format": "uuid",
+          "title": "Request Id",
+          "type": "string"
+        },
+        "version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "request_id"
+      ],
+      "title": "Meta",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "data": {
+      "$ref": "#/$defs/HealthData"
+    },
+    "meta": {
+      "$ref": "#/$defs/Meta"
+    }
+  },
+  "required": [
+    "data",
+    "meta"
+  ],
+  "title": "HealthResponse",
+  "type": "object"
+}

@@ -1,0 +1,219 @@
+{
+  "report": {
+    "match_id": "synthetic-browser-fixture",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "map": "de_mirage",
+    "data_origin": "synthetic_fixture",
+    "parser_version": "demoparser2-0.42.1",
+    "rule_version": "aim-events-v1",
+    "movement_threshold": 34.0,
+    "round_numbering": "confirmed_recorded_rounds",
+    "rounds": [
+      {
+        "id": "1b33569b-0b10-534e-bfc9-72413fd58466",
+        "round_no": 1,
+        "start_tick": 100,
+        "end_tick": 300,
+        "winner": null
+      }
+    ],
+    "players": [
+      {
+        "player_id": "111",
+        "name": "Test A",
+        "shots": 3,
+        "damage": 160,
+        "kills": 1,
+        "headshot_kills": 1,
+        "known_headshot_kills": 1,
+        "unknown_headshot_kills": 0,
+        "speed_sample_count": 2,
+        "moving_shots": 1,
+        "findings": [
+          {
+            "finding_id": "movement:4ba73610-01e7-56f0-97fb-31379ab49a63",
+            "scope": "personal",
+            "category": "movement_at_fire",
+            "severity": "info",
+            "summary": "记录回合 1 存在移动开火样本",
+            "player_id": "111",
+            "observed_facts": [
+              "Tick 120，ak47 开火时水平速度 40.0 u/s"
+            ],
+            "inferences": [
+              "超过34 u/s观察阈值；是否影响该武器精度尚未判定"
+            ],
+            "counterfactual_options": [
+              "结合该回合意图核查是否需要停稳再开火；不应只凭速度认定失误"
+            ],
+            "evidence_refs": [
+              {
+                "round_id": "1b33569b-0b10-534e-bfc9-72413fd58466",
+                "round_no": 1,
+                "start_tick": 120,
+                "end_tick": 120,
+                "event_id": "4ba73610-01e7-56f0-97fb-31379ab49a63"
+              }
+            ],
+            "confidence": null,
+            "uncertainty_reasons": [
+              "观察阈值未经武器/版本校准，不是失误概率"
+            ],
+            "model_version": "none",
+            "rule_version": "aim-events-v1",
+            "review_status": "unreviewed"
+          }
+        ],
+        "weapons": [
+          {
+            "weapon": "ak47",
+            "shots": 3,
+            "damage": 160,
+            "kills": 1
+          }
+        ],
+        "events": [
+          "4ba73610-01e7-56f0-97fb-31379ab49a63",
+          "50bf1301-95b9-58ad-b034-6cabe4d7e2b2",
+          "b3a5fde5-19a5-56a3-8081-94078b920381",
+          "b0f65802-3738-53d7-81c3-d48d4f23bae2",
+          "513ef0a6-cbb0-5626-99be-807ff5c05e16",
+          "48cbe232-9974-5ba1-bef7-c036b4b9e360"
+        ],
+        "coverage_complete": true,
+        "headshot_kill_ratio": 1.0,
+        "damage_per_shot": 53.333333333333336,
+        "moving_shot_ratio": 0.5,
+        "speed_coverage": 0.6666666666666666,
+        "participated_rounds": null
+      }
+    ],
+    "quality": {
+      "non_gun_events": 1,
+      "outside_confirmed_rounds": 1,
+      "friendly_or_self_events": 1
+    },
+    "limitations": [
+      "不是命中率或真实反应时间分析",
+      "伤害使用原始dmg_health记录，可能含过量伤害",
+      "移动开火是观察样本，不自动判定失误",
+      "记录回合号不保证等于官方比赛回合号"
+    ]
+  },
+  "events": [
+    {
+      "id": "4ba73610-01e7-56f0-97fb-31379ab49a63",
+      "round_id": "1b33569b-0b10-534e-bfc9-72413fd58466",
+      "round_no": 1,
+      "tick": 120,
+      "type": "weapon_fire",
+      "actor": "111",
+      "target": null,
+      "actor_name": "Test A",
+      "target_name": null,
+      "weapon": "ak47",
+      "speed": 40.0,
+      "damage": null,
+      "headshot": null,
+      "position": null,
+      "view_angles": null,
+      "is_airborne": null,
+      "ducked": null
+    },
+    {
+      "id": "b0f65802-3738-53d7-81c3-d48d4f23bae2",
+      "round_id": "1b33569b-0b10-534e-bfc9-72413fd58466",
+      "round_no": 1,
+      "tick": 120,
+      "type": "player_hurt",
+      "actor": "111",
+      "target": "222",
+      "actor_name": "Test A",
+      "target_name": "",
+      "weapon": "ak47",
+      "speed": null,
+      "damage": 80,
+      "headshot": null,
+      "position": null,
+      "view_angles": null,
+      "is_airborne": null,
+      "ducked": null
+    },
+    {
+      "id": "48cbe232-9974-5ba1-bef7-c036b4b9e360",
+      "round_id": "1b33569b-0b10-534e-bfc9-72413fd58466",
+      "round_no": 1,
+      "tick": 121,
+      "type": "player_death",
+      "actor": "111",
+      "target": "222",
+      "actor_name": "Test A",
+      "target_name": "",
+      "weapon": "ak47",
+      "speed": null,
+      "damage": null,
+      "headshot": true,
+      "position": null,
+      "view_angles": null,
+      "is_airborne": null,
+      "ducked": null
+    },
+    {
+      "id": "513ef0a6-cbb0-5626-99be-807ff5c05e16",
+      "round_id": "1b33569b-0b10-534e-bfc9-72413fd58466",
+      "round_no": 1,
+      "tick": 121,
+      "type": "player_hurt",
+      "actor": "111",
+      "target": "222",
+      "actor_name": "Test A",
+      "target_name": "",
+      "weapon": "ak47",
+      "speed": null,
+      "damage": 80,
+      "headshot": null,
+      "position": null,
+      "view_angles": null,
+      "is_airborne": null,
+      "ducked": null
+    },
+    {
+      "id": "50bf1301-95b9-58ad-b034-6cabe4d7e2b2",
+      "round_id": "1b33569b-0b10-534e-bfc9-72413fd58466",
+      "round_no": 1,
+      "tick": 140,
+      "type": "weapon_fire",
+      "actor": "111",
+      "target": null,
+      "actor_name": "Test A",
+      "target_name": null,
+      "weapon": "ak47",
+      "speed": null,
+      "damage": null,
+      "headshot": null,
+      "position": null,
+      "view_angles": null,
+      "is_airborne": null,
+      "ducked": null
+    },
+    {
+      "id": "b3a5fde5-19a5-56a3-8081-94078b920381",
+      "round_id": "1b33569b-0b10-534e-bfc9-72413fd58466",
+      "round_no": 1,
+      "tick": 160,
+      "type": "weapon_fire",
+      "actor": "111",
+      "target": null,
+      "actor_name": "Test A",
+      "target_name": null,
+      "weapon": "ak47",
+      "speed": 0.0,
+      "damage": null,
+      "headshot": null,
+      "position": null,
+      "view_angles": null,
+      "is_airborne": null,
+      "ducked": null
+    }
+  ]
+}
